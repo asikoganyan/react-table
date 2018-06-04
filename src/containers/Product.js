@@ -123,7 +123,6 @@ class Product extends Component{
         let This = this;
         this.interval = setInterval(()=>{
             products = JSON.parse(localStorage.getItem("products"));
-            console.log(products);
             This.setState({products});
         },2000)
     }
