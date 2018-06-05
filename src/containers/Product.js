@@ -13,6 +13,7 @@ class Product extends Component{
     interval = null;
     constructor(props){
         super(props);
+        this.saveIntLocalStorage(testProducts);
         this.state = {
             rebuild: false,
             showUndo: false,
@@ -123,7 +124,10 @@ class Product extends Component{
         let This = this;
         this.interval = setInterval(()=>{
             products = JSON.parse(localStorage.getItem("products"));
-            This.setState({products});
+            if(products){
+                This.setState({products});
+            }
+
         },2000)
     }
 
